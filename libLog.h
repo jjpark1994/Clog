@@ -1,8 +1,12 @@
+#ifndef LIBLOG_H
+#define LIBLOG_H
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
 #include<stdarg.h>
+
 
 typedef enum {
 	DEBUG,
@@ -19,3 +23,5 @@ void write_log(LOG_LEVEL level, const char* func, int line, const char* fmt, ...
 
 //로그 파일 닫기
 void close_log();
+
+#endif
