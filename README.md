@@ -1,5 +1,4 @@
-# Clog
-c 언어로 구현된 로그 구현 입니다.
+# Clog c 언어로 구현된 로그 구현 입니다.
 
 
 1. 전처리 까지만, 처리된 소스파일 확인 할것. ex) gcc-E main.c main.i 2
@@ -15,6 +14,7 @@ c 언어로 구현된 로그 구현 입니다.
 
 
 		과제 1 . 정적라이브러리, 동적라이브러리 만들기
+		--정적 라이브러리 만들기 --
 		bash >> gcc -c libLog.c -o libLog.o
 		bash >> 정적 라이브러리 아카이브 생성 ar rcs liblog.a libLog.o
 		이제 liblog.a 라는 라이브러리 파일이 생성
@@ -22,4 +22,20 @@ c 언어로 구현된 로그 구현 입니다.
 		main.c 를 컴파일 하면서 liblog.a를 링크함
 		gcc main.c -L. -log -o main
 		실행 ./main
+		--동적 라이브러리 만들기--
+		1.객체 파일을 PIC(위치 독립 코드)로 컴파일
+		gcc -fPIC -c libLog.c -o libLog.o
+		-fPIC(Position Independent Code) : 동적 라이브러리에 필요
+		2..so 파일 생성
+		gcc -shared -o liblog.so libLog.o
+		-shared : 공유 라이브러리 생성 옵션
+		결과 : liblog.so 생성됨
+		3.main.c에서 동적 라이브러리 사용하기
+		gcc main.c -L. -llog -o main
+		-llog : liblog.so를 링크(정적 .a와 동일하게 사용)
+		!! 동적 라이브러리를 사용할 경우 실행시에도 해당 .so 파일을 찾을 수 있어야 함
+		4.실행시 라이브러리 경로 설정
+		gcc main.c -L. -WI, -rpath=. -llog -o main
+
 		과제 2 . 과제1에서만들 라이브러리로 실행 파일 만들기
+	
