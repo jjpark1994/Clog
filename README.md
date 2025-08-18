@@ -39,13 +39,13 @@
 
 		과제 2 . 과제1에서만들 라이브러리로 실행 파일 만들기
   
-project/
-├── Makefile
-├── bin/        ← 실행파일 설치 위치
-├── inc/        ← 헤더파일
-│   └── libLog.h
-├── lib/        ← 라이브러리 설치 위치
-├── libsrc/     ← 라이브러리 소스
-│   └── libLog.c
-├── src/        ← 메인 소스
-│   └── main.c
+		project/
+		├── Makefile
+		├── bin/        ← 실행파일 설치 위치
+		├── inc/        ← 헤더파일
+		│   └── libLog.h
+		├── lib/        ← 라이브러리 설치 위치
+		├── libsrc/     ← 라이브러리 소스
+		│   └── libLog.c
+		├── src/        ← 메인 소스
+		│   └── main.c
